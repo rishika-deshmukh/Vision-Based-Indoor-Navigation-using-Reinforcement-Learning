@@ -10,19 +10,34 @@ A Deep Reinforcement Learning project where a virtual robot learns to navigate a
 
 ---
 
-## 📌 What is This Project?
+## 📌 Problem Statement
 
-Imagine dropping a robot into a room it has never seen before:
-- It can only see what is in front of it through a small camera.
-- There are obstacles placed around the room blocking its path.
-- It is told the general direction of the goal, but not how to get there.
+Autonomous indoor navigation is challenging because robots cannot rely on GPS indoors. They must use sensor information, such as cameras, to understand their surroundings and reach a target.
 
-This project trains an AI agent using **Proximal Policy Optimization (PPO)** to figure out how to move around obstacles and reach the goal through trial and error across 1.5 million training steps.
+This project focuses on mapless visual navigation, where:
+* 🤖 **The robot moves inside a 3D simulated environment** with random obstacles.
+* 📷 **It uses a 64×64 RGB camera** to see its surroundings[cite: 1].
+* 🟢 **A green goal** is randomly placed in the environment[cite: 1].
+* 🟥 **Red obstacles** are placed between the robot and the goal[cite: 1].
+* 🗺️ **No map, GPS, or pre-defined path** is provided[cite: 1].
+* 🧠 **The robot learns how to reach the goal and avoid obstacles** through Deep Reinforcement Learning[cite: 1].
+
+---
+
+## 🎯 Project Objectives
+
+The goal is to train a PPO-based Deep Reinforcement Learning agent that can[cite: 1]:
+* 📷 **Understand its surroundings** using RGB camera images[cite: 1].
+* 🧭 **Use the goal direction and distance** to guide navigation[cite: 1].
+* 🎮 **Choose between four actions:** Forward, Left, Right, and Stop[cite: 1].
+* 🛑 **Avoid collisions** with obstacles[cite: 1].
+* 🟢 **Reach the target** efficiently[cite: 1].
+* 🔄 **Navigate successfully** across randomly generated environments without a pre-defined path[cite: 1].
 
 ---
 
 ## 🎬 How It Works
-
+![](./screenshots/img.png) 
 1. **Vision:** A small $64 \times 64$ RGB image from the robot's front camera.
 2. **Goal Guidance (4 Values):** 
    - How far the goal is (normalized distance).
@@ -63,7 +78,7 @@ The robot gets feedback after every single step:
 
 | Average Reward Per Episode | Average Steps Per Episode |
 |:---:|:---:|
-| ![Reward Graph](./screenshots/tensorboard-ep-rew-mean.png) | ![Episode Length Graph](./screenshots/tensorboard-ep-len-mean.png) |
+| ![Reward Graph](./screenshots/total-reward.png) | ![Episode Length Graph](./screenshots/tensorboard-ep-len-mean.png) |
 | *Rewards rise steadily as navigation improves* | *Steps decrease as the agent finds shorter paths* |
 
 - **First 200k steps:** Robot bumps into boxes frequently while exploring.
