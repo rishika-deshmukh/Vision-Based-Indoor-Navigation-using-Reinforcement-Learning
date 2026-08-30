@@ -37,7 +37,6 @@ The goal is to train a PPO-based Deep Reinforcement Learning agent that can[cite
 ---
 
 ## 🎬 How It Works
-![](./screenshots/img.png) 
 <img src="./screenshots/img.png" width="500"/>
 1. **Vision:** A small $64 \times 64$ RGB image from the robot's front camera.
 2. **Goal Guidance (4 Values):** 
