@@ -38,6 +38,7 @@ The goal is to train a PPO-based Deep Reinforcement Learning agent that can[cite
 
 ## 🎬 How It Works
 ![](./screenshots/img.png) 
+<img src="./screenshots/img.png" width="500"/>
 1. **Vision:** A small $64 \times 64$ RGB image from the robot's front camera.
 2. **Goal Guidance (4 Values):** 
    - How far the goal is (normalized distance).
@@ -78,7 +79,7 @@ The robot gets feedback after every single step:
 
 | Average Reward Per Episode | Average Steps Per Episode |
 |:---:|:---:|
-| ![Reward Graph](./screenshots/total-reward.png) | ![Episode Length Graph](./screenshots/tensorboard-ep-len-mean.png) |
+| ![Reward Graph](./screenshots/total-reward.png) | ![Episode Length Graph](./screenshots/total-steps.png) |
 | *Rewards rise steadily as navigation improves* | *Steps decrease as the agent finds shorter paths* |
 
 - **First 200k steps:** Robot bumps into boxes frequently while exploring.
